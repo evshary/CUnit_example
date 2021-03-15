@@ -1,46 +1,13 @@
 #include <stdio.h>
 #include <CUnit/Basic.h>
-#include "myfunc.h"
 
-void testNormal(void)
-{
-    CU_ASSERT_TRUE(myfunc(1) == 1);
-    CU_ASSERT_TRUE(myfunc(100) == 10000);
-}
-
-CU_TestInfo testcases1[] = {
-    {"Normal", testNormal},
-    CU_TEST_INFO_NULL
-};
-
-void testTooLarge(void)
-{
-    CU_ASSERT_TRUE(myfunc(10000) == -1);
-    CU_ASSERT_TRUE(myfunc(101) == -1);
-}
-
-void testNegative(void)
-{
-    CU_ASSERT_TRUE(myfunc(-1) == -1);
-    CU_ASSERT_TRUE(myfunc(-100) == -1);
-}
-
-void testZero(void)
-{
-    CU_ASSERT_TRUE(myfunc(0) == -1);
-}
-
-CU_TestInfo testcases2[] = {
-    {"Too large number", testTooLarge},
-    {"Negative number", testNegative},
-    {"Zero", testZero},
-    CU_TEST_INFO_NULL
-};
+extern CU_TestInfo testcases1[];
+extern CU_TestInfo testcases2[];
 
 int suite_init(void) { return 0; }
 int suite_clean(void) { return 0; }
-int suite_setup(void) { return 0; }
-int suite_teardown(void) { return 0; }
+void suite_setup(void) { return; }
+void suite_teardown(void) { return; }
 
 CU_SuiteInfo suites[] = {
     {"MyTestSuite1", suite_init, suite_clean, suite_setup, suite_teardown, testcases1},
