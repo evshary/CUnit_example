@@ -10,7 +10,9 @@ sudo apt install libcunit1-dev
 
 # Example
 
-* [simple_example](simple_example)
+* [simple_example](simple_example): How to write a simple CUnit example.
+* [multiple_suites](multiple_suites): How to split your test into different suites.
+* [cmake_example](cmake_example): How to use cmake to run unit test.
 
 # Reference
 
